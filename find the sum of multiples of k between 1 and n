@@ -1,0 +1,30 @@
+#python
+
+k = int(input())
+n = int(input())
+total = 0
+for i in range(k,n+1,k):
+    total += i
+print(total)
+
+
+#java
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int k = sc.nextInt();
+        int n = sc.nextInt();
+        int total = 0;
+        for(int i = k;i<=n;i+=k){
+            total += i;
+        
+        }
+        System.out.println(total);
+    }
+}
