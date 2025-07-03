@@ -1,0 +1,36 @@
+#python
+
+list_ = [int(x) for x in input().split()]
+Sum = 0
+for num in list_:
+    Sum += num
+avg = Sum / len(list_)
+print("Sum :",Sum)
+print("Average : {:.2f}".format(avg))
+
+#java
+
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Read input as space-separated integers
+        String[] input = sc.nextLine().split("\\s+");
+        int sum = 0;
+
+        for (String s : input) {
+            int num = Integer.parseInt(s);
+            sum += num;
+        }
+
+        double avg = (double) sum / input.length;
+
+        // Output with clear formatting
+        System.out.println("Sum : " + sum);
+        System.out.printf("Average : %.2f\n", avg);
+    }
+}
+
