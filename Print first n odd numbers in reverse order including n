@@ -1,0 +1,28 @@
+#python
+
+num = int(input())
+if num % 2 == 0:
+    num -= 1
+for i in range(num,0,-2):
+    print(i,end =" ")
+
+#java
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        if(num % 2 == 0){
+            num--;
+        }
+        for(int i = num;i >= 1;i-=2){
+            System.out.print(i+" ");
+            
+        }
+    }
+}
