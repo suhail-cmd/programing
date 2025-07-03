@@ -1,0 +1,5 @@
+num = int(input())
+if num % 2 == 0:
+    print("No it is not odd")
+else:
+    print("Yes it is odd")
