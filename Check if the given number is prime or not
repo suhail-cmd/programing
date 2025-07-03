@@ -1,0 +1,38 @@
+#python
+
+num = int(input())
+count = 0
+for i in range(1,num + 1):
+    if num % i == 0:
+        count += 1
+if count == 2:
+    print("Yes")
+else:
+    print("No")
+        
+
+#java
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int count = 0;
+        for(int i = 1;i <= num ;i++){
+            if(num % i == 0){
+                count += 1;
+            }
+        }
+        if(count == 2){
+            System.out.println("Yes");
+        }
+        else{
+            System.out.println("No");
+        }
+    }
+}
