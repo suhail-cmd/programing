@@ -1,0 +1,22 @@
+#python
+
+a,b = map(int,input().split())
+avg = (a + b) / 2
+print(f"{avg:.2f}")
+
+#java
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        double avg = (a + b)/ 2.0;
+        System.out.printf("%.2f\n",avg);
+    }
+}
