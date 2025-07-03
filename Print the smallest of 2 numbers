@@ -1,0 +1,3 @@
+a,b = map(int,input().split())
+smallest = min(a,b)
+print(smallest)
