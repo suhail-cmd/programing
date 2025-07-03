@@ -1,0 +1,26 @@
+#python
+
+a,b = map(int,input().split())
+print("Before swapping :",a,b)
+a,b = b,a
+print("After swapping :",a,b)
+
+#java
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        System.out.println("Before swapping : "+ a +" "+ b);
+        int temp = a;
+         a = b;
+         b = temp;
+        System.out.println("After swapping : "+ a + " "+ b);
+    }
+}
