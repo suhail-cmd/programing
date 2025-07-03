@@ -1,0 +1,7 @@
+#python
+
+char = input()
+if char in 'aeiouAEIOU':
+    print("Vowel")
+else:
+    print("Consonant")
