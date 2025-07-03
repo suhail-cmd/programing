@@ -1,0 +1,33 @@
+#python
+
+list_ = [int(x) for x in input().split()]
+Sum = 0
+for num in list_:
+    if num != -1:
+        Sum += num
+print(Sum,end=" ")
+
+#java
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        String[] input = sc.nextLine().split(" ");
+
+        int sum = 0;
+        for(String s:input){
+            int num = Integer.parseInt(s);
+            if(num != -1){
+                sum += num;
+        }    
+            }
+            
+        System.out.println(sum);
+            
+        }
+    }
