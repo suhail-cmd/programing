@@ -1,0 +1,43 @@
+#python
+
+num = int(input())
+rev = 0
+original = num
+while num != 0:
+    digit = num % 10
+    rev = rev * 10 + digit
+    num //= 10
+if rev == original:
+    print("Yes")
+else:
+    print("No")
+
+#java
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int original = num;
+        int rev = 0;
+        while(num != 0){
+            int digit = num % 10;
+            rev = rev * 10 + digit;
+            num /= 10;
+        }
+        if(rev == original){
+            System.out.println("Yes");
+            
+        }
+        else{
+            System.out.println("No");
+            
+        }
+        
+    }
+}
