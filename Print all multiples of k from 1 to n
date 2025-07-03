@@ -1,0 +1,28 @@
+#python
+
+start = int(input())
+end = int(input())
+i = start
+while i <= end:
+    print(i,end=" ")
+    i+= start
+
+
+
+#java
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int fnum = sc.nextInt();
+        int lnum = sc.nextInt();
+        for(int i = fnum;i <= lnum;i+=fnum){
+            System.out.print(i + " ");
+        }
+    }
+}
