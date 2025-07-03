@@ -1,0 +1,2 @@
+num = int(input())
+print("Hi, the number you entered is :",num)
