@@ -1,0 +1,30 @@
+#python
+
+ch = input()
+if ch.isupper():
+    print(ch.lower())
+else:
+    print(ch.upper())
+
+#java
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        char ch = sc.next().charAt(0);
+        if (Character.isUpperCase(ch)){
+            System.out.println(Character.toLowerCase(ch));
+        }
+        else if(Character.isLowerCase(ch)){
+            System.out.println(Character.toUpperCase(ch));
+        }
+        else{
+            System.out.println(ch);
+        }
+    }
+}
