@@ -1,0 +1,27 @@
+#python
+
+list_ = [int(x) for x in input().split()]
+for num in list_:
+    if num != -1:
+        print(num,end = " ")
+    else:
+        break
+
+#java
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        String[] input = sc.nextLine().split(" ");
+        for(String s:input){
+            int num = Integer.parseInt(s);
+            if( num == -1)break;
+        System.out.print(num + " ");
+        }
+        }
+    }
