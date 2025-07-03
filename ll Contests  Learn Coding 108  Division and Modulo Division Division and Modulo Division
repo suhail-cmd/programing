@@ -1,0 +1,5 @@
+a,b = map(int,input().split())
+div = round(a / b)
+mod = a % b
+print(f"Result of division is : {div}")
+print(f"Result of modulo division is : {mod}")
