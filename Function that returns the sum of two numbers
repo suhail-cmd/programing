@@ -1,0 +1,28 @@
+#python
+
+def Sum_of_two(a,b):
+    print(a + b)
+
+a,b = map(int,input().split())
+Sum_of_two(a,b)
+
+#java
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    public static void sumoftwo(int a,int b){
+        System.out.println(a + b);
+    }
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        
+        sumoftwo(a,b);
+    }
+    
+}
