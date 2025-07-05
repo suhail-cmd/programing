@@ -1,0 +1,28 @@
+#java
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        
+        ArrayList<Integer> list = new ArrayList<>();
+        
+        while(sc.hasNextInt()){
+            int num = sc.nextInt();
+            list.add(num);
+            
+        }    
+        for(int num :list){
+            System.out.print(num+" ");
+        }
+    }
+}
+
+#python
+
+arr = list(map(int,input().split()))
+print(* arr)
