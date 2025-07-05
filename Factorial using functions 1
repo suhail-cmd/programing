@@ -1,0 +1,33 @@
+#python
+
+def factorial(num):
+    fact = 1
+    for i in range(1,num + 1):
+        fact *= i
+    print(f"Factorial of {num} :",fact)
+
+num = int(input())
+factorial(num)
+
+#java
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    public static void fact(int num){
+        int facts = 1;
+        for(int i = 1;i <= num;i++){
+            facts *= i;
+        }
+        System.out.printf("Factorial of "+ num + " : " + facts);
+    }
+    
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        fact(num);
+    }
+}
