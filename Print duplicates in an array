@@ -1,0 +1,50 @@
+#python
+
+n = int(input())
+nums = list(map(int,input().split()))
+duplicates = []
+for num in nums:
+    
+    if nums.count(num) >= 2 and num not in duplicates:
+        duplicates.append(num)
+print(*duplicates)
+
+#java
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    public static void duplicates(ArrayList<Integer> list,ArrayList<Integer>duplicate){
+        for(int num : list){
+            if(Collections.frequency(list,num) >= 2 && !duplicate.contains(num)){
+                duplicate.add(num);
+            }
+            
+        }
+        if(duplicate.isEmpty()){
+            System.out.print(-1);
+            
+        }
+        else{
+            for(int val:duplicate){
+                System.out.print(val + " ");
+                
+            }
+        }
+    }
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        ArrayList<Integer> list = new ArrayList<>();
+        ArrayList<Integer> duplicate = new ArrayList<>();
+        for(int i = 0;i < n;i++){
+            int num = sc.nextInt();
+            list.add(num);
+        }
+        
+        duplicates(list,duplicate);
+    }
+}
+
