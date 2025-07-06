@@ -1,0 +1,63 @@
+#java
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    public static boolean isPrime(int num){
+        if(num <= 1)return false;
+        for(int i = 2;i*i<= num;i++){
+            if(num % i == 0)return false;
+            
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        ArrayList<Integer> list = new ArrayList<>();
+        ArrayList<Integer> prime = new ArrayList<>();
+        for(int i = 0;i < n;i++){
+            int num = sc.nextInt();
+            list.add(num);
+
+        }
+        for(int num: list){
+            if(isPrime(num)){
+                prime.add(num);
+            }
+            
+        }
+        if(prime.size() == 0){
+            System.out.print(-1);
+        }else{
+        for(int p :prime){
+            System.out.print(p+" ");
+        }
+        }
+        
+    }
+}
+
+#python 
+
+def is_prime(num):
+    if num <= 1:
+        return False
+    for i in range(2,int(num **0.5)+1):
+        if num % i == 0:
+            return False
+    return True
+num = int(input())
+nums = list(map(int,input().split()))
+prime = []
+for i in nums:
+    if is_prime(i):
+        prime.append(i)
+if len(prime) == 0:
+    print(-1)
+else:
+    print(*prime)
+    
