@@ -1,0 +1,36 @@
+#java
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    public static void unique(ArrayList<Integer>list,ArrayList<Integer>uniques){
+        for(int num : list){
+            if(Collections.frequency(list,num) == 1 && (!uniques.contains(num)) ){
+                uniques.add(num);
+            }
+        }
+        if(uniques.isEmpty()){
+            System.out.print(-1);
+        }
+        else{
+            Collections.sort(uniques);
+            for(int val:uniques){
+                System.out.print(val + " ");
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        ArrayList<Integer>list = new ArrayList<>();
+        ArrayList<Integer>uniques = new ArrayList<>();
+        for(int i = 0;i < n;i++){
+            int num = sc.nextInt();
+            list.add(num);
+        }
+        unique(list,uniques);
+    }
+}
