@@ -1,0 +1,50 @@
+#python
+
+n = int(input())
+nums = list(map(int,input().split()))
+Sum = int(input())
+found = False
+for i in range(len(nums)):
+    for j in range(i+1,len(nums)):
+        if nums[i]+nums[j] == Sum:
+            print(nums[i],nums[j])
+            found = True
+if found == False:
+    print(-1)
+            
+    
+            
+#java
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        ArrayList<Integer> list = new ArrayList<>();
+    
+        for(int i = 0;i < n;i++){
+            int num =sc.nextInt();
+            list.add(num);
+        }
+        int target = sc.nextInt();
+        boolean found = false;
+        for(int i = 0;i < list.size();i++){
+            for(int j = i + 1;j < list.size();j++){
+                if(list.get(i) + list.get(j) == target){
+                    System.out.println(list.get(i)+" "+list.get(j));
+                    found = true;
+                }
+            }
+            
+        }
+        if(!found){
+            System.out.println(-1);
+        }
+        
+    }
+}
