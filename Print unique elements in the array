@@ -34,3 +34,18 @@ public class Solution {
         unique(list,uniques);
     }
 }
+
+
+#python
+
+n  = int(input())
+nums = list(map(int,input().split()))
+unique=[]
+nums.sort()
+for num in nums:
+    if nums.count(num)== 1 and num not in unique:
+        unique.append(num)
+if len(unique) == 0:
+    print(-1)
+else:
+    print(*unique)
