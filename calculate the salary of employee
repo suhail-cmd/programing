@@ -1,0 +1,26 @@
+#python
+
+employee_id = int(input())
+total_worked_hours = int(input())
+amount_per_hour = float(input())
+salary = total_worked_hours * amount_per_hour
+print(f"employee id is {employee_id} - salary is {salary:.2f}")
+
+#java
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int employee_id = sc.nextInt();
+        int worked_hours = sc.nextInt();
+        double amount = sc.nextDouble();
+        double salary = worked_hours * amount;
+        System.out.printf("employee id is %d - salary is %.2f",employee_id,salary);
+        
+    }
+}
