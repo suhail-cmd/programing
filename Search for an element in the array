@@ -1,0 +1,43 @@
+#python
+
+n = int(input())
+nums = list(map(int,input().split()))
+val = int(input())
+found = False
+for i in range(len(nums)):
+    if nums[i] == val:
+        print(i)
+        found = True
+        break
+if not found:
+    print(-1)
+
+#java
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        ArrayList<Integer>list = new ArrayList<>();
+        for(int i = 0;i < n;i++){
+            list.add(sc.nextInt());
+        }
+        int val = sc.nextInt();
+        boolean found = false;
+        for(int i = 0;i < list.size();i++){
+            if(list.get(i) == val){
+                System.out.print(i);
+                found = true;
+                break;
+            }
+        }
+        if(!found){
+            System.out.println(-1);
+        }
+    }
+}
