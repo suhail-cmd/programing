@@ -1,0 +1,30 @@
+#python
+
+n = int(input())
+nums = list(map(int,input().split()))
+Sum = sum(nums)
+res = Sum/n
+print(f"{res:.2f}")
+
+#java
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[]nums = new int[n];
+        int sum = 0;
+        for(int i = 0;i < n;i++){
+            nums[i] = sc.nextInt();
+            sum += nums[i];
+            
+        }
+        double avg = (double)sum/n;
+        System.out.printf("%.2f",avg);
+    }
+}
