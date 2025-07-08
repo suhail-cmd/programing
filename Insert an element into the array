@@ -1,0 +1,13 @@
+#python
+
+n = int(input())
+nums = list(map(int,input().split()))
+pos= int(input())
+num = int(input())
+l1= nums[:pos-1]
+l2 = nums[pos-1:]
+l1.append(num)
+l1.extend(l2)
+print(*l1)
+
+
