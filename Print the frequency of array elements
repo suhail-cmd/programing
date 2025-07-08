@@ -1,0 +1,43 @@
+#python
+
+n = int(input())
+nums = list(map(int,input().split()))
+freq = {}
+nums.sort()
+for num in nums:
+    if num not in freq:
+        freq[num] = 1
+    else:
+        freq[num] += 1
+for key,val in freq.items():
+    print(str(key) + " - " + str(val))
+    
+
+#java
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        HashMap<Integer,Integer> freq = new HashMap<>();
+        for(int i = 0;i < n;i++){
+            int num = sc.nextInt();
+            if(freq.containsKey(num)){
+                freq.put(num,freq.get(num)+1);
+            }
+            else{
+                freq.put(num,1);
+            }
+        }
+            
+       for(Map.Entry<Integer,Integer> entry:freq.entrySet()){
+        System.out.println(entry.getKey()+" - "+entry.getValue());
+        } 
+    }
+    
+}
