@@ -1,0 +1,56 @@
+#python
+
+n = int(input())
+nums = list(map(int, input().split()))
+zeros = []
+
+i = 0
+while i < len(nums):
+    if nums[i] == 0:
+        zeros.append(0)
+        nums.pop(i)  
+    else:
+        i += 1
+
+nums.extend(zeros)
+print(*nums)
+
+#java
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        ArrayList<Integer> nums = new ArrayList<>();
+        for(int i = 0;i < n;i++){
+            nums.add(sc.nextInt());
+        }
+        ArrayList<Integer> zeros = new ArrayList<>();
+        int i = 0; 
+        while(i < nums.size()){
+            if(nums.get(i) == 0){
+                zeros.add(0);
+                nums.remove(i);
+                
+            }
+            else{
+                i++;
+            }
+            
+            
+        }
+        nums.addAll(zeros);
+        for(int val:nums){
+            System.out.print(val+" ");
+             
+         }     
+            
+        
+        
+    }
+}
