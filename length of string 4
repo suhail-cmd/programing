@@ -1,0 +1,27 @@
+#python
+
+s = input()
+word = list(s)
+length = len(word)
+print(length)
+
+#java
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        List<Character> charList = new ArrayList<>();
+        for(char ch :str.toCharArray()){
+            charList.add(ch);
+        }
+        int len = charList.size();
+        System.out.print(len);
+
+    }
+}
