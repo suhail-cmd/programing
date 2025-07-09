@@ -1,0 +1,17 @@
+#python 
+
+n = int(input())
+for i in range(n):
+    for j in range(n):
+        print("*",end = "")
+    print()
+
+Sample Input 0
+
+4
+Sample Output 0
+
+****
+****
+****
+****
