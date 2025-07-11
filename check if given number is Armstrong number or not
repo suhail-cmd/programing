@@ -1,0 +1,45 @@
+#python 
+
+def armstrong_num(num):
+    digits = list(map(int,str(num)))
+    power = len(digits)
+    Sum = sum(d ** power for d in digits)
+    return Sum == num
+
+num = int(input())
+if armstrong_num(num):
+    print("Yes")
+else:
+    print("No")
+
+#java
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    public static boolean armstrong(int num){
+        int original = num;
+        int sum = 0;
+        int digits = String.valueOf(num).length();
+        while(num > 0){
+            int digit = num % 10;
+            sum += Math.pow(digit,digits);
+            num /= 10;
+        }
+        return sum == original;
+    }
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+        if(armstrong(number)){
+            System.out.print("Yes");
+        }
+        else{
+            System.out.print("No");
+        }
+    }
+}
+
