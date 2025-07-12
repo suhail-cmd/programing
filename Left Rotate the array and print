@@ -1,28 +1,39 @@
 #python
 
-def rotatearr(arr,times):
-    times %= len(arr)
-    return arr[times:] + arr[:times]
-
 n = int(input())
-arr = list(map(int,input().split()))
-times = int(input())
-rotated = rotatearr(arr,times)
-print(*rotated)
-    
-#python
+l = list(map(int,input().split()))
+rotations = int(input())
+rotations = rotations % n
+l =l[rotations:] + l[:rotations]
+print(*l)
 
-def rotatearr(arr,times):
-    n = len(arr)
-    for i in range(times):
-        first = arr[0]
-        for j in range(n -1):
-            arr[j] = arr[j + 1]
-        arr[n - 1] = first
+#java
 
-n = int(input())
-arr = list(map(int,input().split()))
-times = int(input())
-rotated = rotatearr(arr,times)
-print(*arr)
-    
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[]arr = new int[n];
+        for(int i = 0;i < n;i++){
+            arr[i] = sc.nextInt();
+        }
+        int[] rotated = new int[n];
+        int rotation = sc.nextInt();
+        rotation %= n;
+        int index = 0;
+        for(int i = rotation;i < n;i++){
+            rotated[index++] = arr[i];
+        }
+        for(int i = 0;i < rotation;i++){
+            rotated[index++] = arr[i];
+        }
+        for(int val :rotated){
+            System.out.print(val +" ");
+        }
+    }
+}
