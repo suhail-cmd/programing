@@ -1,0 +1,41 @@
+#python
+
+n = int(input())
+l = list(map(int,input().split()))
+rotation = int(input())
+rotation = rotation % n 
+l = l[rotation:]+l[:rotation]
+print(*l)
+
+
+#java
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        ArrayList<Integer> list = new ArrayList<>();
+        for(int i = 0;i < n;i++){
+            list.add(sc.nextInt());
+        }
+        int rotations = sc.nextInt();
+        rotations %= n;
+        int[] rotated = new int[n];
+        int index = 0;
+        for(int i = rotations;i < n;i++){
+            rotated[index++] = list.get(i);
+        }
+        for(int i = 0;i < rotations;i++){
+            rotated[index++] = list.get(i);
+        }
+        for(int val:rotated){
+            System.out.print(val + " ");
+        }
+        
+    }
+}
