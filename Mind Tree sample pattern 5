@@ -1,0 +1,26 @@
+#python
+
+rows,start = map(int,input().split())
+for i in range(start,start + rows):
+    for j in range(i- start + 1):
+        print(i,end="")
+    print()
+for i in range(rows + start - 1,start -1,-1):
+    for j in range(i- start + 1):
+        print(i,end="")
+    print()
+
+Sample Input
+
+4 3
+
+Sample Output
+
+3
+44
+555
+6666
+6666
+555
+44
+3
