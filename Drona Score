@@ -1,0 +1,44 @@
+#python
+
+n = list(map(int,input().split()))
+target = n[0]
+Sum_targets = []
+for i in range(1,len(n)):
+    Sum_targets.append(i)
+    if Sum_targets == target:
+        break
+    else:
+        continue
+turns = len(Sum_targets)
+print(f"The number of turns is {turns}")
+
+#java
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        String[] inputs = sc.nextLine().split(" ");
+        int[] n = new int[inputs.length];
+        for(int i = 0;i < inputs.length;i++){
+            n[i] = Integer.parseInt(inputs[i]);   
+        }
+        ArrayList<Integer> turns = new ArrayList<>();
+        int target = n[0];
+        int sum = 0;
+        for(int i = 1;i < n.length;i++){
+            turns.add(n[i]);
+            sum += n[i];
+            if(sum == target){
+                break;
+            }
+            
+        }
+        int c_turns = turns.size();
+        System.out.printf("The number of turns is "+ c_turns);    
+    }
+}
