@@ -1,3 +1,5 @@
+#python
+
 a,b = map(int,input().split())
 Sum = a + b
 print(f"The sum of given 2 numbers is : {Sum}")
