@@ -1,0 +1,13 @@
+#python
+
+n = int(input())
+nums = list(map(int,input().split()))
+leaders = []
+Max = 0
+for i in range(n - 1,-1,-1):
+    if nums[i] > Max:
+        leaders.append(nums[i])
+        Max = nums[i]
+rev_leaders = leaders[::-1]
+print(*rev_leaders)
+
