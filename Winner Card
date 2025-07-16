@@ -1,0 +1,52 @@
+#python
+
+n = input()
+nums = []
+Sum_odd = 0
+Sum_even = 0
+for d in n:
+    nums.append(int(d))
+for num in nums:
+    if num % 2 != 0:
+        Sum_odd += num
+    else:
+        Sum_even += num
+if Sum_odd == Sum_even:
+    print("Johnny will win the card game")
+else:
+    print("Johnny will not win the card game")
+
+#java
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        String num = sc.nextLine();
+        int sum_odd = 0;
+        int sum_even = 0;
+        for(int i = 0;i < num.length();i++){
+            int digit = Character.getNumericValue(num.charAt(i));
+            if(digit % 2 == 0){
+                sum_even += digit;
+            }
+            else{
+                sum_odd += digit;
+            }
+        }
+        if(sum_even == sum_odd){
+            System.out.print("Johnny will win the card game");
+        }
+        else{
+            
+        
+        System.out.print("Johnny will not win the card game");
+        }
+    }
+}
+
+  
