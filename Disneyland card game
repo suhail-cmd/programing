@@ -1,0 +1,32 @@
+#python
+
+credits = list(map(int,input().split()))
+Sum = []
+for num in credits:
+    if num != -999:
+        Sum.append(num)
+points = sum(Sum)
+print(f"The credit points :",points)
+
+
+#java
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        String[] nums = sc.nextLine().split(" ");
+        int[] credits = new int[nums.length];
+        int sum = 0;
+        for(int val:credits){
+            if(val != -999){
+                sum += val;
+            }
+        }
+        System.out.print("The credit points : "+sum);
+    }
+}
