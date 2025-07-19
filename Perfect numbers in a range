@@ -1,0 +1,54 @@
+#python
+
+def isperfect(n):
+    
+    per = []
+    for i in range(1,n):
+        Sum = 0
+        for j in range(1,i):
+            if i % j == 0:
+                Sum += j
+        if Sum == i:
+            per.append(i)
+    return(per)
+
+n = int(input())
+res = isperfect(n)
+print(*res)
+
+
+#java
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    public static void perfectnum(int n){
+        ArrayList<Integer> per = new ArrayList<>();
+        
+        for(int i = 1;i < n;i++){
+            int sum = 0;
+            for(int j = 1;j < i;j++){
+                if(i % j == 0){
+                    sum += j;
+                }
+            }
+            if(sum == i){
+                per.add(i);
+            
+            }
+        }
+        for(int val:per){
+            System.out.print(val + " ");
+        }
+         
+    }
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        perfectnum(n);
+        
+    }
+}
