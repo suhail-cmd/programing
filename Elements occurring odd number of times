@@ -1,0 +1,57 @@
+#java
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        ArrayList<Integer> nums = new ArrayList<>();
+        for(int i = 0;i < n;i++){
+            nums.add(sc.nextInt());
+        }
+        Map<Integer,Integer> freq = new HashMap<>();
+        for(int num : nums){
+            freq.put(num,freq.getOrDefault(num,0)+1);
+            }
+        
+        ArrayList<Integer> oddtimes = new ArrayList<>();
+        for(Map.Entry<Integer,Integer>entry:freq.entrySet()){
+            if(entry.getValue() % 2 != 0){
+                oddtimes.add(entry.getKey());
+            }
+        }
+        if(oddtimes.isEmpty()){
+            oddtimes.add(-1);
+        }
+        for(int val: oddtimes){
+            System.out.print(val + " ");
+        }
+        
+    }
+}
+
+#pyhton
+
+n = int(input())
+nums = list(map(int,input().split()))
+odd_no = []
+freq = {}
+for num in nums:
+    if num not in freq:
+        freq[num] = 1
+    else:
+        freq[num] += 1
+for key,value in freq.items():
+    if value % 2 != 0:
+        odd_no.append(key)
+if not odd_no:
+    odd_no.append(-1)
+odd_no.sort()
+print(*odd_no)
+    
+        
