@@ -1,0 +1,47 @@
+#python
+
+print(*input()[::-1])
+######
+string = input()
+l = []
+for ch in string:
+    l.append(ch)
+rev = l[::-1]
+print(*rev)
+
+
+#java
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        StringBuilder rev = new StringBuilder(str);
+        rev.reverse();
+        for(int i = 0;i < rev.length();i++){
+            System.out.print(rev.charAt(i)+ " ");
+        }
+    }
+}
+
+###########
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        for(int i = str.length() - 1;i >= 0;i--){
+            System.out.print(str.charAt(i)+" ");
+        }
+    }
+}
