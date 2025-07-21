@@ -1,0 +1,31 @@
+#python
+
+total_days = int(input())
+year = total_days // 365
+remaing_days = total_days % 365
+month = remaing_days // 30
+remaing_days %= 30
+week = remaing_days // 7
+days = remaing_days % 7
+print(f"{year} year(s) {month} month(s) {week} week(s) {days} day(s)")
+
+#java
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int total_days = sc.nextInt();
+        int year = total_days / 365;
+        int remaing_days = total_days % 365;
+        int month = remaing_days / 30;
+        remaing_days = remaing_days % 30;
+        int week = remaing_days / 7;
+        int days = remaing_days % 7;
+        System.out.print(year+" " +"year(s)"+" " + month +" "+ "month(s)" +" "+ week + " "+"week(s)"+" " + days +" "+ "day(s)");
+    }
+}
