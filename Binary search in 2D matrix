@@ -1,0 +1,27 @@
+#python
+
+rows = int(input())
+cols = int(input())
+target = int(input())
+matrix = []
+for i in range(rows):
+    row = list(map(int,input().split()))
+    matrix.append(row)
+low = 0 
+high = rows * cols -1
+found = False
+while low <= high:
+    mid = (low + high) // 2
+    row_index = mid//cols
+    col_index = mid % cols
+    if matrix[row_index][col_index] == target:
+        print(row_index,col_index)
+        found = True
+        break
+        
+    elif matrix[row_index][col_index] < target:
+        low = mid + 1
+    else:
+        high = mid - 1 
+if not found:
+    print("not")
