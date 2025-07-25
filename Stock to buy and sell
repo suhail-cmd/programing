@@ -1,0 +1,10 @@
+#pyhton
+
+price = [7,1,5,3,6,4]
+profit = 0
+mini = price[0]
+for i in range(1,len(price)):
+    cost = price[i] - mini
+    profit = max(profit,cost)
+    mini = min(mini,price[i])
+print(profit)
