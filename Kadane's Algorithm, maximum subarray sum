@@ -1,0 +1,33 @@
+#pyhton
+
+nums = [-2,-3,4,-1,-2,1,5,-3]
+maxi = float('-inf')
+Sum = 0
+temp_start = 0
+start = 0
+end = 0
+for i in range(len(nums)):
+    Sum += nums[i]
+    if Sum > maxi:
+        maxi = Sum
+        start = temp_start
+        end = i
+    if Sum < 0:
+        Sum = 0
+        temp_start = i + 1
+print(maxi)
+print(nums[start:end+1])
+
+############################
+nums = [-2,-3,4,-1,-2,1,5,-3]
+maxi = float('-inf')
+Sum = 0
+start = -1
+end = -1
+for i in range(len(nums)):
+    Sum += nums[i]
+    if Sum > maxi:
+        maxi = Sum
+    if Sum < 0:
+        Sum = 0
+print(maxi)
