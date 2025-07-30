@@ -1,0 +1,32 @@
+#python
+arr = [1,2,3,1,1,4]
+c1 = c2 = 0
+can1= can2 = None
+for num in arr:
+    if can1 == num:
+        c1 += 1 
+    elif can2 == num:
+        c2 += 1
+    elif c1 == 0:
+        can1 = num
+        c1 += 1
+    elif c2 == 0:
+        can2 = num
+        c2 += 1 
+    else:
+        c1 -= 1
+        c2 -= 1 
+for candidate in [can1,can2]:
+    if arr.count(candidate) > len(arr)//3:
+        print(candidate)
+############
+arr = [1,2,3,1,1,4]
+freq = {}
+for num in arr:
+    if num not in freq:
+        freq[num] = 1 
+    else:
+        freq[num] += 1
+for key,value in freq.items():
+    if value >= len(arr)//3:
+        print(key)
