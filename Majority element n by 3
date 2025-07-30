@@ -1,0 +1,61 @@
+#python
+arr = [1,2,3,1,1,4]
+c1 = c2 = 0
+can1= can2 = None
+for num in arr:
+    if can1 == num:
+        c1 += 1 
+    elif can2 == num:
+        c2 += 1
+    elif c1 == 0:
+        can1 = num
+        c1 += 1
+    elif c2 == 0:
+        can2 = num
+        c2 += 1 
+    else:
+        c1 -= 1
+        c2 -= 1 
+for candidate in [can1,can2]:
+    if arr.count(candidate) > len(arr)//3:
+        print(candidate)
+############
+arr = [1,2,3,1,1,4]
+freq = {}
+for num in arr:
+    if num not in freq:
+        freq[num] = 1 
+    else:
+        freq[num] += 1
+for key,value in freq.items():
+    if value >= len(arr)//3:
+        print(key)
+
+###################################
+class Solution:
+    def majorityElement(self, nums: List[int]) -> List[int]:
+        if not nums:
+            return []
+        count1 = count2 = 0
+        candidate1 =  candidate2 = None
+        res = []
+        for num in nums:
+            if candidate1 == num:
+                count1 += 1
+            elif candidate2 == num:
+                count2 += 1
+            elif count1 == 0:
+                candidate1 = num
+                count1 = 1
+            elif count2 == 0:
+                candidate2 = num
+                count2 = 1
+            else:
+                count1 -= 1
+                count2 -= 1
+        for candidate in [candidate1,candidate2]:
+            if  nums.count(candidate) > len(nums)//3:
+                res.append(candidate)
+        return res
+
+        
