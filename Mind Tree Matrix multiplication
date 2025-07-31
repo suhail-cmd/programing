@@ -1,0 +1,22 @@
+#python
+
+n,start = map(int,input().split())
+matrix1 = []
+curr = start
+for i in range(n):
+    row = []
+    for j in range(n):
+        row.append(curr)
+        curr += 1
+    matrix1.append(row)
+res = []
+for i in range(n):
+    row = []
+    for j in range(n):
+        val = 0
+        for k in range(n):
+            val += matrix1[i][k] * matrix1[j][k]
+        row.append(val)
+    res.append(row)
+for row in res:
+    print(*row)
