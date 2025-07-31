@@ -1,0 +1,30 @@
+#python
+
+arr = [[1, 3], [2, 6], [8, 10], [9, 18]]
+i = 0
+while i < len(arr):
+    j = i + 1 
+    while j < len(arr):
+        if not arr[i][1] < arr[j][0] or arr[i][0] > arr[j][1]:
+            arr[i][0] = min(arr[i][0],arr[j][0])
+            arr[i][1] = max(arr[i][1],arr[j][1])
+            arr.pop(j)
+        else:
+            j += 1 
+    i += 1 
+print(arr)
+
+#########################
+
+arr = [[1, 3], [2, 6], [8, 10], [9, 18]]
+arr.sort()
+merged = [arr[0]]
+for  i in range(1,len(arr)):
+    last = merged[-1]
+    curr =  arr[i]
+    if curr[0] <= last[1]:
+        last[1] = max(last[1],curr[1])
+    else:
+        merged.append(curr)
+    
+print(merged)
