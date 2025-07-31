@@ -1,0 +1,15 @@
+#python
+
+arr = [ 100,101,3,102,4,2,1,7]
+long_seq = 0 
+arr_set = set(arr)
+for num in arr:
+    if num - 1 not in arr_set:
+        count = 1
+        curr = num + 1 
+        while curr in arr_set:
+            count += 1 
+            curr += 1
+            long_seq = max(long_seq,count)
+print(long_seq)
+        
