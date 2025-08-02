@@ -1,0 +1,82 @@
+#python
+
+rows,cols = map(int,input().split())
+elements1 = list(map(int, input().split()))
+rows2,cols2 = map(int,input().split())
+elements2 = list(map(int, input().split()))
+res = []
+if rows != rows2 or cols != cols2:
+    print("Addition is not possible")
+else:
+    mat1 = []
+    mat2 = []
+    index = 0
+    for i in range(rows):
+        row = []
+        for j in range(cols):
+            row.append(elements1[index])
+            index += 1
+        mat1.append(row)
+    index = 0
+    for i in range(rows2):
+        row = []
+        for j in range(cols2):
+            row.append(elements2[index])
+            index += 1
+        mat2.append(row)
+        
+    for i in range(rows):
+        row = []
+        for j in range(cols):
+             row.append(mat1[i][j] + mat2[i][j])
+        res.append(row)
+    for row in res:
+        print(*row)
+        
+#java
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int rows = sc.nextInt();
+        int cols = sc.nextInt();
+        int[][] mat1  = new int[rows][cols];
+        for(int i = 0;i < rows;i++){
+            for(int j = 0;j < cols;j++){
+                mat1[i][j] = sc.nextInt();
+            }
+        }
+        int rows2 = sc.nextInt();
+        int cols2 = sc.nextInt();
+        int[][] mat2 = new int[rows2][cols2];
+        for(int i = 0;i < rows2;i++){
+            for(int j = 0;j < cols2;j++){
+                mat2[i][j] = sc.nextInt();
+            }
+        }
+        int[][]result = new int[rows][cols];
+        if(rows != rows2 || cols != cols2){
+            System.out.print("Addition is not possible");
+            return;
+        }
+        else{
+            for(int i = 0;i < rows;i++){
+                for(int j = 0;j < cols;j++){
+                    result[i][j] = mat1[i][j] + mat2[i][j];
+                }
+            }
+        }
+        for(int i = 0;i < rows;i++){
+            for(int j = 0;j < cols;j++){
+                System.out.print(result[i][j]+" ");
+            }
+            System.out.println();
+        }
+        
+    }
+}
