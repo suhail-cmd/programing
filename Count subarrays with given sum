@@ -1,0 +1,45 @@
+#python
+arr = [1,2,3,-3,1,1,1,4,2,-3]
+target = 3
+index_sum = {0:1}
+prefix_sum = 0
+count = 0
+for num in arr:
+    prefix_sum += num
+    if prefix_sum - target  in index_sum:
+        count += index_sum[prefix_sum - target]
+    if prefix_sum in index_sum:
+        index_sum[prefix_sum] += 1
+    else:
+        index_sum[prefix_sum] = 1
+
+print(count)
+##############################
+arr = [1,2,3,-3,1,1,1,4,2,-3]
+target = 3
+index_sum = {0:1}
+prefix_sum = 0
+count = 0
+
+for num in arr:
+    prefix_sum += num
+    if prefix_sum - target in index_sum:
+        count += index_sum[prefix_sum - target]
+    # ALWAYS update the frequency of the current prefix_sum
+    index_sum[prefix_sum] = index_sum.get(prefix_sum, 0) + 1
+
+print(count)
+#####################
+arr = [1, 2, 3, -3, 1, 1, 1, 4, 2, -3]
+count = 0
+target = 3
+
+for i in range(len(arr)):
+    for j in range(i, len(arr)):
+        s = 0
+        for k in range(i, j + 1):  # ✅ include the last element
+            s += arr[k]
+        if s == target:
+            count += 1 
+
+print(count)
