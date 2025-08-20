@@ -1,0 +1,38 @@
+#python
+arr = [-1,0,1,0,2,-2]
+res = []
+for i in range(len(arr)):
+    for j in range(i+1,len(arr)):
+        for k in range(j+1,len(arr)):
+            for l in range(k+1,len(arr)):
+                if arr[i] + arr[j] + arr[k] + arr[l] == 0:
+                    res.append(tuple(sorted([arr[i],arr[j],arr[k],arr[l]])))
+un = set(res)
+triplet = [list(t) for t in un]
+print(triplet)
+################################
+arr = [-1,0,1,0,2,-2]
+arr.sort()
+res = []
+for i in range(len(arr)):
+    if i > 0 and arr[i] == arr[i-1]:
+        continue
+    for j in range(i+1,len(arr)):
+        if j > i+1 and arr[j] == arr[j-1]:
+            continue
+        left,right = j+1,len(arr)-1
+        while left < right:
+            total = arr[i]+arr[j]+arr[left]+arr[right]
+            if total == 0:
+                res.append([arr[i],arr[j],arr[left],arr[right]])
+                while left < right and arr[left] == arr[left + 1]:
+                    left+=1 
+                while left < right and arr[right] == arr[right-1]:
+                    right -= 1 
+                left +=1 
+                right-=1 
+            elif total < 0:
+                left += 1 
+            else:
+                right -=1 
+print(res)
