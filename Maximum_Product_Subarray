@@ -1,0 +1,47 @@
+#python
+arr = [2,3,0,-2,4]
+n = len(arr)
+prefix,suffix = 1,1 
+max_ele = float('-inf')
+for i in range(n):
+    prefix = prefix * arr[i]
+    suffix = suffix * arr[n-1-i]
+    if prefix == 0:
+        prefix = 1 
+    if suffix == 0:
+        suffix = 1 
+    max_ele = max(max_ele,prefix,suffix)
+print(max_ele)
+##########################
+arr = [2,3,0,-2,4]
+max_ele = float('-inf')
+for i in range(len(arr)):
+    prod = 1 
+    for j in range(i,len(arr)):
+        prod = prod * arr[j]
+        max_ele = max(max_ele,prod)
+print(max_ele)
+##################
+#java
+import java.util.*;
+import java.io.*;
+public class Main{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int n = sc.nextInt();
+	    ArrayList<Integer>list = new ArrayList<>();
+	    for(int i = 0;i < n;i++){
+	        list.add(sc.nextInt());
+	    }
+	    int prefix = 1,suffix = 1;
+	    int max_ele = Integer.MIN_VALUE;
+	    for(int i = 0;i < n;i++){
+	        prefix = prefix * list.get(i);
+	        suffix = suffix * list.get(n-1-i);
+	        if(prefix == 0)prefix = 1;
+	        if(suffix == 0)suffix = 1;
+	        max_ele = Math.max(max_ele,Math.max(prefix,suffix));
+	    }
+		System.out.println(max_ele);
+	}
+}
