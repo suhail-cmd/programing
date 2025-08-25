@@ -1,0 +1,23 @@
+#python
+def fun(n):
+    if n == 1:
+        return 0
+    if n % 2 == 0:
+        return 1+fun(n//2)
+    elif n%2!=0:
+        return 1+fun((3*n) + 1)
+print(fun(7))  
+###########################
+def collatz_steps(n):
+    count = 0
+    while n != 1:
+        if n % 2 == 0:
+            n = n // 2
+        else:
+            n = 3 * n + 1
+        count += 1
+    return count
+
+# Input
+n = int(input())
+print(collatz_steps(n))
