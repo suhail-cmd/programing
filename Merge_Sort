@@ -1,0 +1,66 @@
+#python
+def merge_Sort(arr):
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr)//2
+    left = merge_Sort(arr[:mid])
+    right = merge_Sort(arr[mid:])
+    return merge(left,right)
+def merge(left,right):
+    result = []
+    i = j = 0
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+            result.append(left[i])
+            i += 1 
+        else:
+            result.append(right[j])
+            j += 1
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result
+arr = list(map(int,input().split()))
+print(merge_Sort(arr))
+
+###java
+import java.util.*;
+import java.io.*;
+public class Main{
+    public static void merge_sort(int[] arr){
+        if(arr.length <= 1)return;
+        int mid = arr.length/2;
+        int[] left = Arrays.copyOfRange(arr,0,mid);
+        int[] right = Arrays.copyOfRange(arr,mid,arr.length);
+        merge_sort(left);
+        merge_sort(right);
+        merge(arr,left,right);
+}
+    public static void merge(int[] arr,int[] left,int[] right){
+        int i = 0,j = 0,k = 0;
+        while( i < left.length && j < right.length){
+            if(left[i] <= right[j]){
+                arr[k++] = left[i++];
+            }
+            else{
+                arr[k++] = right[j++];
+            }
+        }
+        while(i < left.length)arr[k++] = left[i++];
+        while(j < right.length)arr[k++] = right[j++];
+    }
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int n = sc.nextInt();
+	    int[] arr = new int[n];
+	    for(int i = 0;i < n;i++){
+	        arr[i] = sc.nextInt();
+	    }
+	    merge_sort(arr);
+		System.out.println(Arrays.toString(arr));
+	}
+}
+
+        
+            
+        
+            
