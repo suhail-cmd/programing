@@ -1,0 +1,36 @@
+#python
+def count_inversions(arr):
+    count = 0
+    for i in range(len(arr)):
+        for j in range(i+1,len(arr)):
+            if arr[i] > arr[j]:
+                count += 1 
+    return count
+arr = list(map(int,input().split()))
+print(count_inversions(arr))
+############
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr,0
+    m = len(arr)//2 
+    left,inv_left_count = merge_sort(arr[:m])
+    right,inv_right_count = merge_sort(arr[m:])
+    merged,inv_split = merge(left,right)
+    return merged,inv_split + inv_right_count + inv_left_count
+def merge(left,right):
+    res = []
+    i = j = inv_count = 0
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            res.append(left[i])
+            i += 1
+        else:
+            res.append(right[j])
+            inv_count += len(left) - i
+            j += 1 
+    res.extend(left[i:])
+    res.extend(right[j:])
+    return res, inv_count
+arr = list(map(int,input().split()))
+_,inv_count = merge_sort(arr)
+print(inv_count)
