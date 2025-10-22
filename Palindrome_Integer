@@ -1,0 +1,27 @@
+#python
+class Solution:
+	# @param A : integer
+	# @return an integer
+	def isPalindrome(self, A):
+        if A < 0:
+            return 0
+        s = str(A)
+        if s == s[::-1]:
+            return 1
+        else:
+            return 0
+####################
+class Solution:
+	# @param A : integer
+	# @return an integer
+	def isPalindrome(self, A):
+        if A < 0 or (A % 10 == 0 and A != 0):
+            return 0
+        rev_half = 0
+        while A > rev_half: 
+            rev_half = rev_half * 10 + A % 10
+            A //= 10
+        if A == rev_half or A == rev_half// 10:
+            return 1
+        else:
+            return 0
