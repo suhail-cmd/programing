@@ -1,0 +1,16 @@
+#python
+class Solution:
+    # @param A : tuple of integers
+    # @return an integer
+    def repeatedNumber(self, A):
+        freq = {}
+        n = len(A)
+        for num in A:
+            if num not in freq:
+                freq[num] = 1
+            else:
+                freq[num] += 1
+        for key,value in freq.items():
+            if value > n//3:
+                return key
+        return -1
