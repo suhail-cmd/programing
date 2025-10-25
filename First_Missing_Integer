@@ -1,0 +1,25 @@
+#python
+class Solution:
+    # @param A : list of integers
+    # @return an integer
+    def firstMissingPositive(self, A):
+        A = set(A)
+        n = 1
+        while n in A:
+            n += 1
+        return n
+###################
+class Solution:
+    # @param A : list of integers
+    # @return an integer
+    def firstMissingPositive(self, A):
+        A.sort()
+        missing = 1
+        for num in A:
+            if num == missing:
+                missing += 1
+            elif num > missing:
+                break
+        return missing
+                
+
