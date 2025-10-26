@@ -1,0 +1,31 @@
+#python
+class Solution:
+    # @param A : integer
+    # @return a strings
+    def solve(self, A):
+        if A < 0 or A > 12:
+            return "Invalid"
+        if A in range(3, 6):
+            return "Spring"
+        if A in range(6, 9):
+            return "Summer"
+        if A in range(9, 12):
+            return "Autumn"
+        return "Winter"
+
+##########################
+class Solution:
+    # @param A : integer
+    # @return a strings
+    def solve(self, A):
+        if A < 0 or A > 12:
+            return "Invalid"
+        elif A >= 3 and A <= 5:
+            return "Spring"
+        elif A >= 6 and A <= 8:
+            return "Summer"
+        elif A >= 9 and A <= 11:
+            return "Autumn"
+        else:
+            return "Winter"
+
