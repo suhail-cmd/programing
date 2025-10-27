@@ -1,5 +1,17 @@
 #python 
+class Solution:
+    # @param A : integer
+    # @return an integer
+    def solve(self, A):
+        n = len(str(A))
+        total = 0
+        for digit in str(A):
+            total += int(digit)**n
+        if total == A:
+            return 1
+        return 0
 
+################
 def armstrong_num(num):
     digits = list(map(int,str(num)))
     power = len(digits)
