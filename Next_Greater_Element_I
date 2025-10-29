@@ -1,0 +1,16 @@
+#python
+class Solution:
+    def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        res = []
+        for num  in nums1:
+            next_greater = -1
+            found = False
+            for val in nums2:
+                if found and val > num:
+                    next_greater = val
+                    break
+                if val == num:
+                    found = True
+                    next_greater = -1
+            res.append(next_greater)
+        return res
